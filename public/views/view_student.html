@@ -1,0 +1,43 @@
+<div class="viewstudent" ng-init="getStudents()">
+	<ng-include src=" 'views/template/navbar.html' "></ng-include>
+	<div class="container">
+		<div class="card animated zoomInUp">
+			<div class="container" ng-show="loader">
+				<div class="row">
+					<img ng-src="images/loader.gif" class="img-fluid loader">
+				</div>
+			</div>
+			<div ng-show="viewStudent">
+				<table class="table table-responsive table-hover">
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Department</th>
+							<th>Matirculation Number</th>
+							<th>Gender</th>
+							<th>Level</th>
+							<th>Date Of Birth</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="student in students" ui-sref="update_student({id : student._id})" data-toggle="tooltip" data-placement="top" title="Click to view student">							
+							<td>{{student.firstName}}</td>
+							<td>{{student.lastName}}</td>
+							<td>{{student.department}}</td>
+							<td>{{student.matricNo}}</td>
+							<td>{{student.gender}}</td>
+							<td>{{student.level}}</td>
+							<td>{{student.dateOfBirth | date : 'MM-dd-yyyy'}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+/*java script*/
+$('[data-toggle="tooltip"]').tooltip();
+</script>

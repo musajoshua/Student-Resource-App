@@ -1,0 +1,79 @@
+<div class="updatestudent" ng-init="checkValid()">
+	<ng-include src=" 'views/template/navbar.html' "></ng-include>
+	<div class="container">
+		<div class="card animated zoomIn">
+			<div class="container" ng-show="loader">
+				<div class="row">
+					<img ng-src="images/loader.gif" class="img-fluid loader">
+				</div>
+			</div>
+			<div class="container" ng-show="updateStudent">
+				<div class="row">
+					<form name="studentForm">
+						<div class="container">
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label active">First Name</label>
+											<input type="text" class="form-control" id="student.firstName" ng-model="student.firstName">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label active">Last Name</label>
+											<input type="text" class="form-control" id="student.lastName" ng-model="student.lastName">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group label-floating">
+											<label class="control-label active">Department</label>
+											<input type="text" class="form-control" id="student.department" ng-model="student.department">
+										</div>
+										<div class="form-group label-floating">
+											<label class="control-label active">Matriculation Number</label>
+											<input type="text" class="form-control" id="student.matricNo" ng-model="student.matricNo">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<label>Select Gender</label>
+									    <select class="form-control" ng-model="student.gender">
+										     <option value="" disabled selected>Choose your Gender</option>
+										     <option value="male">Male</option>
+										     <option value="female">Female</option>
+										     <option value="others">Prefer not to disclose</option>
+										</select>
+									</div>
+									<div class="col-sm-6">
+									    <label>Select Level</label>
+									    <select class="form-control" ng-model="student.level">
+									     	<option ng-value="" disabled selected>Choose your Level</option>
+									     	<option ng-value="100">100</option>
+									     	<option ng-value="200">200</option>
+									     	<option ng-value="300">300</option>
+									     	<option ng-value="400">400</option>
+									     	<option ng-value="500">500</option>
+									    </select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<input type="date" class="datepicker form-control" ng-model="student.dateOfBirth" >
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="submit" ng-click="saveStudent(student._id,student)" class="btn btn-success" >Save</button>
+							<button type="submit" ng-click="deleteStudent(student._id)" class="btn btn-danger" >Delete</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

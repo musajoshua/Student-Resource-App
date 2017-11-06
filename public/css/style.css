@@ -1,0 +1,43 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.addstudent, .viewstudent, .updatestudent {
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    border-radius: 0px;
+}
+
+.addstudent {
+    /* The image used */
+    background-image: url("../images/writer.jpg");
+}
+
+.viewstudent {
+    /* The image used */
+    background-image: url("../images/book.jpg");
+}
+.updatestudent {
+    /* The image used */
+    background-image: url("../images/bookshelf.jpeg");
+}
+
+.card{
+    margin-top: 20px;
+	background-color: rgba(555,555,555,0.9);
+}
+
+.loader{
+	display:block;
+	margin: 0 auto;
+}
+
+.navbar{
+    background-color: transparent !important;
+}
